@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="welcomeVC" customModule="countdown_timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeBG" translatesAutoresizingMaskIntoConstraints="NO" id="HX4-AY-JQ1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QY-46-3BO" customClass="customButton" customModule="countdown_timer" customModuleProvider="target">
+                                <rect key="frame" x="5" y="666" width="404" height="60"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5UK-TU-7Ub"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Welcome">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="welcomeBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48c-FP-1xy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown Timer!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bU-HI-IuE">
+                                <rect key="frame" x="67.666666666666686" y="20.000000000000004" width="279" height="45.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HX4-AY-JQ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4qU-7t-4lX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4QY-46-3BO" secondAttribute="bottom" constant="10" id="N9H-bu-Yge"/>
+                            <constraint firstItem="HX4-AY-JQ1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Uj5-xA-W9Z"/>
+                            <constraint firstItem="5bU-HI-IuE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bZi-aA-TfC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4QY-46-3BO" secondAttribute="trailing" constant="5" id="dKy-ga-inJ"/>
+                            <constraint firstItem="HX4-AY-JQ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hcI-UW-WFC"/>
+                            <constraint firstItem="5bU-HI-IuE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pvO-2e-emu"/>
+                            <constraint firstItem="4QY-46-3BO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="rmC-J7-wBK"/>
+                            <constraint firstItem="HX4-AY-JQ1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sxb-Yn-5gN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="Naz-Mc-GcZ" kind="show" identifier="eventTimerSegue" id="peV-t1-jlQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="77.445652173913047"/>
+        </scene>
+        <!--Event TimerVC-->
+        <scene sceneID="yFk-Gp-0yI">
+            <objects>
+                <viewController id="Naz-Mc-GcZ" customClass="eventTimerVC" customModule="countdown_timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="drY-OZ-dN2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calcTiime" translatesAutoresizingMaskIntoConstraints="NO" id="MVE-Ys-5UN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add event name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8RP-KD-ffZ">
+                                <rect key="frame" x="60" y="100" width="294" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="com-ua-UHU"/>
+                                </constraints>
+                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add date" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FuR-Qy-PrU" customClass="customTextField" customModule="countdown_timer" customModuleProvider="target">
+                                <rect key="frame" x="60" y="162" width="294" height="40"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dcx-k3-8gf"/>
+                                </constraints>
+                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tr8-oD-SkA" customClass="customButton" customModule="countdown_timer" customModuleProvider="target">
+                                <rect key="frame" x="60" y="284" width="294" height="60"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jTL-e3-DW6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="welcomeBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BE-y9-qtF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add time (optional)" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9H-um-w76">
+                                <rect key="frame" x="60" y="224" width="294" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uGq-pB-qyl"/>
+                                </constraints>
+                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JXM-8Z-GM4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tr8-oD-SkA" firstAttribute="top" secondItem="m9H-um-w76" secondAttribute="bottom" constant="20" id="0GA-h9-L7g"/>
+                            <constraint firstItem="m9H-um-w76" firstAttribute="leading" secondItem="FuR-Qy-PrU" secondAttribute="leading" id="4rk-Ff-b9i"/>
+                            <constraint firstItem="MVE-Ys-5UN" firstAttribute="top" secondItem="JXM-8Z-GM4" secondAttribute="top" id="EpB-5S-748"/>
+                            <constraint firstItem="m9H-um-w76" firstAttribute="top" secondItem="FuR-Qy-PrU" secondAttribute="bottom" constant="22" id="FEj-uh-Ar7"/>
+                            <constraint firstItem="m9H-um-w76" firstAttribute="trailing" secondItem="FuR-Qy-PrU" secondAttribute="trailing" id="Hq3-qe-YYZ"/>
+                            <constraint firstItem="FuR-Qy-PrU" firstAttribute="trailing" secondItem="8RP-KD-ffZ" secondAttribute="trailing" id="IDS-eU-64D"/>
+                            <constraint firstItem="8RP-KD-ffZ" firstAttribute="centerX" secondItem="drY-OZ-dN2" secondAttribute="centerX" id="J4N-qQ-bQ8"/>
+                            <constraint firstItem="tr8-oD-SkA" firstAttribute="leading" secondItem="m9H-um-w76" secondAttribute="leading" id="Lco-r0-Tw1"/>
+                            <constraint firstItem="FuR-Qy-PrU" firstAttribute="top" secondItem="8RP-KD-ffZ" secondAttribute="bottom" constant="22" id="TlA-se-mPM"/>
+                            <constraint firstItem="MVE-Ys-5UN" firstAttribute="bottom" secondItem="JXM-8Z-GM4" secondAttribute="bottom" id="UpU-3b-LYj"/>
+                            <constraint firstItem="8RP-KD-ffZ" firstAttribute="leading" secondItem="JXM-8Z-GM4" secondAttribute="leading" constant="60" id="WVW-2j-Pi5"/>
+                            <constraint firstItem="JXM-8Z-GM4" firstAttribute="trailing" secondItem="8RP-KD-ffZ" secondAttribute="trailing" constant="60" id="eSz-8L-VOd"/>
+                            <constraint firstItem="8RP-KD-ffZ" firstAttribute="top" secondItem="JXM-8Z-GM4" secondAttribute="top" constant="100" id="iWL-CA-wgT"/>
+                            <constraint firstItem="MVE-Ys-5UN" firstAttribute="trailing" secondItem="JXM-8Z-GM4" secondAttribute="trailing" id="nR4-Fd-iec"/>
+                            <constraint firstItem="tr8-oD-SkA" firstAttribute="centerX" secondItem="drY-OZ-dN2" secondAttribute="centerX" id="veI-Dh-MxU"/>
+                            <constraint firstItem="FuR-Qy-PrU" firstAttribute="leading" secondItem="8RP-KD-ffZ" secondAttribute="leading" id="yU7-KD-jxC"/>
+                            <constraint firstItem="MVE-Ys-5UN" firstAttribute="leading" secondItem="JXM-8Z-GM4" secondAttribute="leading" id="zY6-cf-JrN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ins-aF-AWk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRy-DW-8nL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.66666666666674" y="76.630434782608702"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calcTiime" width="4480" height="6720"/>
+        <image name="welcomeBG" width="3648" height="5472"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
